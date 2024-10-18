@@ -15,77 +15,99 @@
       <div class="flex flex-col">
         <label for="first_name" class="mb-1 text-gray-700">First Name</label>
         <input type="text" id="first_name" name="first_name" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="first_name_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['first_name']) ? $errors['first_name'] : ""; ?>
+        </span>
       </div>
       
       <!-- Last Name -->
       <div class="flex flex-col">
         <label for="last_name" class="mb-1 text-gray-700">Last Name</label>
         <input type="text" id="last_name" name="last_name" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="last_name_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['last_name']) ? $errors['last_name'] : ""; ?>
+        </span>
       </div>
       
       <!-- Email -->
       <div class="flex flex-col">
         <label for="email" class="mb-1 text-gray-700">Email</label>
         <input type="email" id="email" name="email" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="email_error" class="text-red-500 text-sm mt-1 hidden">Enter a valid email address.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['email']) ? $errors['email'] : ""; ?>
+        </span>
       </div>
       
       <!-- Phone -->
       <div class="flex flex-col">
         <label for="phone" class="mb-1 text-gray-700">Phone</label>
         <input type="text" id="phone" name="phone" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="phone_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['phone']) ? $errors['phone'] : ""; ?>
+        </span>
       </div>
 
       <!-- Password -->
       <div class="flex flex-col">
         <label for="password" class="mb-1 text-gray-700">Password</label>
         <input type="password" id="password" name="password" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="password_error" class="text-red-500 text-sm mt-1 hidden">Password must be at least 6 characters.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['password']) ? $errors['password'] : ""; ?>
+        </span>
       </div>
       
       <!-- House Number -->
       <div class="flex flex-col">
         <label for="house_no" class="mb-1 text-gray-700">House No</label>
         <input type="text" id="house_no" name="house_no" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="house_no_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['house_no']) ? $errors['house_no'] : ""; ?>
+        </span>
       </div>
 
       <!-- Street -->
       <div class="flex flex-col">
         <label for="street" class="mb-1 text-gray-700">Street</label>
         <input type="text" id="street" name="street" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="street_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['street']) ? $errors['street'] : ""; ?>
+        </span>
       </div>
 
       <!-- Upazila -->
       <div class="flex flex-col">
         <label for="upazila" class="mb-1 text-gray-700">Upazila</label>
         <input type="text" id="upazila" name="upazila" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="upazila_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['upazila']) ? $errors['first_name'] : ""; ?>
+        </span>
       </div>
 
       <!-- District -->
       <div class="flex flex-col">
         <label for="district" class="mb-1 text-gray-700">District</label>
         <input type="text" id="district" name="district" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="district_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['district']) ? $errors['district'] : ""; ?>
+        </span>
       </div>
 
       <!-- City -->
       <div class="flex flex-col">
         <label for="city" class="mb-1 text-gray-700">City</label>
         <input type="text" id="city" name="city" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="city_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['city']) ? $errors['city'] : ""; ?>
+        </span>
       </div>
 
       <!-- Country -->
       <div class="flex flex-col">
         <label for="country" class="mb-1 text-gray-700">Country</label>
         <input type="text" id="country" name="country" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="country_error" class="text-red-500 text-sm mt-1 hidden">This field is required.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['country']) ? $errors['country'] : ""; ?>
+        </span>
       </div>
 
       <!-- Account Type -->
@@ -95,7 +117,9 @@
           <option value="savings">Savings</option>
           <option value="checking">Checking</option>
         </select>
-        <span id="account_type_error" class="text-red-500 text-sm mt-1 hidden">Please select an account type.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($errors['account_type']) ? $errors['account_type'] : ""; ?>
+        </span>
       </div>
 
       <!-- Balance -->
@@ -109,7 +133,9 @@
       <div class="flex flex-col">
         <label for="image" class="mb-1 text-gray-700">Upload Image</label>
         <input type="file" id="image" name="image" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
-        <span id="image_error" class="text-red-500 text-sm mt-1 hidden">Please upload an image.</span>
+        <span id="image_error" class="text-red-500 text-sm mt-1">
+          <?= isset($message) ? $message : ""; ?>
+        </span>
       </div>
 
       <!-- Submit Button -->

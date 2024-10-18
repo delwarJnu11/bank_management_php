@@ -1,7 +1,6 @@
 <?php
 
-$db = require_once __DIR__ . "/../config/db_config.php";
-require_once __DIR__ . "/../utility/generateAccountNo.php";
+require_once __DIR__ . "/../utility/functions.php";
 
 class Account{
     public $first_name;
@@ -20,7 +19,7 @@ class Account{
     private $balance;
     public $account_type;
 
-   public function __construct($fname, $lname, $email, $phone, $password, $house_no, $street, $upazila, $district, $city, $country, $image, $account_type, $balance) 
+   public function __construct($fname, $lname, $email, $phone, $password, $house_no, $street, $upazila, $district, $city, $country, $image, $account_type, $balance = 0.00) 
    {
         $this->first_name = $fname;
         $this->last_name = $lname;
@@ -39,13 +38,30 @@ class Account{
         $this->balance = $balance;
    }
 
-   public function createAccount(){
-    global $db;
-    $statement = $db->prepare("insert into accounts(first_name,last_name,email,phone,password,house_no,street, upazila, district, city, country, image, account_no, account_type, balance) values(:first_name, :last_name, :email, :phone, :password, :house_no, :street, :upazila, :district, :city, :country, :image, :account_no, :account_type, :balance)");
+   public function createAccount($db){
+    
+    $statement = $db->prepare("INSERT INTO accounts(first_name, last_name, email, phone, password, house_no, street, upazila, district, city, country, image, account_no, account_type, balance) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $statement->bind_param("ssssssssssssssi", $this->first_name, $this->last_name, $this->email,$this->phone, $this->password, $this->house_no, $this->street, $this->upazila, $this->district, $this->city, $this->country, $this->image, $this->account_no, $this->account_type, $this->balance);
+    $statement->bind_param(
+        "ssssssssssssssi", 
+        $this->first_name, 
+        $this->last_name, 
+        $this->email,
+        $this->phone, 
+        $this->password, 
+        $this->house_no, 
+        $this->street, 
+        $this->upazila, 
+        $this->district, 
+        $this->city, 
+        $this->country, 
+        $this->image, 
+        $this->account_no, 
+        $this->account_type, 
+        $this->balance
+    );
 
-    $statement->execute();
-   }
+    return $statement->execute();
+}
 
 }
