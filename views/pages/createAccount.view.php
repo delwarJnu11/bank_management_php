@@ -79,7 +79,7 @@
         <label for="upazila" class="mb-1 text-gray-700">Upazila</label>
         <input type="text" id="upazila" name="upazila" class="border border-slate-300 p-3 rounded-md focus:ring-2 focus:ring-sky-500 focus:outline-none">
         <span id="image_error" class="text-red-500 text-sm mt-1">
-          <?= isset($errors['upazila']) ? $errors['first_name'] : ""; ?>
+          <?= isset($errors['upazila']) ? $errors['upazila'] : ""; ?>
         </span>
       </div>
 

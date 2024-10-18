@@ -108,7 +108,7 @@ if(isset($_POST['createAccount'])){
 
     if($first_name && $last_name && preg_match($emailPattern, $email) && preg_match($phonePattern, $phone) && preg_match($passwordPattern, $password) && $house_no && $street && $upazila && $district && $city && $country && $account_type && $image['name']){
         
-        $newAccount = new Account($first_name, $last_name,$email, $phone, $password, $house_no, $street, $upazila, $district, $city, $country, $image['name'], $account_type,$balance);
+        $newAccount = new Account($first_name, $last_name,$email, $phone, $password, $house_no, $street, $upazila, $district, $city, $country, $image['name'],$account_type, $balance);
 
         $newAccount->createAccount($db);
 
